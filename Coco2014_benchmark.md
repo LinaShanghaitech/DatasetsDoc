@@ -3,8 +3,21 @@
 ### Dataset overview
 - COCO数据集有91类，虽然比ImageNet和SUN类别少，但是每一类的图像多，这有利于获得更多的每类中位于某种特定场景的能力，对比PASCAL VOC，其有更多类和图像。
 - COCO数据集分两部分发布，前部分于2014年发布，后部分于2015年，
-- 2014年版本：82,783 training, 40,504 validation, and 40,775 testing images，有270k的segmented people和886k的segmented object；
-- 2015年版本：165,482 train, 81,208 val, and 81,434 test images。
+- 2014年版本  
+
+ |train| val| test
+ ---|---|---
+ 82,783 |40,504|40,775 
+ 
+ |people|object
+ ---|---
+ 270k | 886k
+ 
+- 2015年版本
+
+ |train| val| test
+ ---|---|---
+165,482|81,208|81,434
 
 #### Data Format
 1. [link address](http://cocodataset.org/#format-data)
@@ -28,6 +41,7 @@
 Each keypoint has a 0-indexed location x,y and a visibility flag v defined as v=0: not labeled (in which case x=y=0),v=1: labeled but not visible, and v=2: labeled and visible. 
 A keypoint is considered visible if it falls inside the object segment. “num_keypoints” indicates the numberof labeled keypoints (v>0) for a given object (many objects, e.g. crowds and small objects, will have num_keypoints=0). Finally, for each category, the categories struct hastwo additional fields: “keypoints,” which is a length k array of keypoint names, and “skeleton”, which defines connectivity via a list of keypoint edge pairs and is used for visualization.
 Currently keypoints are only labeled for the person category (for most medium/large non-crowd person instances)
+
 ![](https://github.com/LinaShanghaitech/DatasetsDoc/blob/master/figure/coco3.png)
 
 **Object Detection** 
